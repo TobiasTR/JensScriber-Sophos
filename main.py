@@ -299,7 +299,7 @@ def main():
 
     login_list = get_target_list(args.target_list)
     driver = get_driver(args.browser)
-    p_bar = tqdm(total=len(login_list * 7),desc="Getting started")
+    p_bar = tqdm(total=len(login_list * 6),desc="Getting started")
 
     for login in login_list:
         p_bar.desc = f"Working on {login.firewall}"
