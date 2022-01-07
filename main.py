@@ -138,13 +138,13 @@ def driver_login(driver,user_data:LoginData):
     driver.find_element(By.ID, "ELEMENT_login_username").send_keys(user_data.username)
     driver.find_element(By.ID, "ELEMENT_login_password").send_keys(user_data.password)
     driver.find_element(By.ID, "ELEMENT_login_button").click()
-    time.sleep(args.delay)
+    
+    while title != title_new:
+        time.sleep(3)
+        title_new = driver.title
 
     return driver
 
-"""while title != title_new:
-        time.sleep(3)
-        title_new = driver.title"""
 
 
 def get_ha_status(driver):
