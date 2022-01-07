@@ -134,13 +134,15 @@ def driver_login(driver,user_data:LoginData):
     driver.get(user_data.url.geturl())
     time.sleep(args.delay)
     title = driver.title
-    title_new = ""
+    title_new = driver.title
+
     driver.find_element(By.ID, "ELEMENT_login_username").send_keys(user_data.username)
     driver.find_element(By.ID, "ELEMENT_login_password").send_keys(user_data.password)
     driver.find_element(By.ID, "ELEMENT_login_button").click()
-    
-    while title != title_new:
-        time.sleep(3)
+
+    while title == title_new:
+        print("while")
+        time.sleep(0.5)
         title_new = driver.title
 
     return driver
