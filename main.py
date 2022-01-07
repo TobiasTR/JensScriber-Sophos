@@ -141,7 +141,6 @@ def driver_login(driver,user_data:LoginData):
     driver.find_element(By.ID, "ELEMENT_login_button").click()
 
     while title == title_new:
-        print("while")
         time.sleep(0.5)
         title_new = driver.title
 
